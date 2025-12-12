@@ -3,6 +3,9 @@ import SmallListItem from "./components/authors/SmallListitem";
 import List from "./components/List";
 import SplitScreen from "./components/SplitScreen";
 import { authors } from "./data/authors";
+import { books } from "./data/books";
+import LargeListItemBooks from "./components/books/LargeListItemBooks";
+import Modal from "./components/modal/Modal";
 
 const LeftSideCamp = ({ title }) => {
   return (
@@ -21,16 +24,28 @@ function App() {
       <RightSideCamp title={"Left"} />
     </SplitScreen> */
     <>
-      <List
+      {/*   <List
         items={authors}
         sourceName={"author"}
         ItemComponent={SmallListItem}
-      />
-      <List
+      /> */}
+      {/*  <List
         items={authors}
         sourceName={"author"}
         ItemComponent={LargeListItem}
-      />
+      /> */}
+      {/*  <List
+        items={books}
+        sourceName={"books"}
+        ItemComponent={LargeListItemBooks}
+      /> */}
+      <Modal>
+        <List
+          items={books}
+          sourceName={"books"}
+          ItemComponent={LargeListItemBooks}
+        />
+      </Modal>
     </>
   );
 }
